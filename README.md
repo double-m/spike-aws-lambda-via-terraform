@@ -42,3 +42,11 @@ and finally
 terraform apply
 ```
 
+## Tests
+
+### Local Manual Test
+
+```
+cd terraform/dev/main/site/hello-lambda/code
+npm test
+```
