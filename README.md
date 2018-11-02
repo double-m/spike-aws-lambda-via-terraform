@@ -11,9 +11,11 @@ The Lambda function is a manually-triggered Hello World written in Node.js.
 I'm using an operating system with installed:
 
 - bash
-- terraform (tested with v0.11.8)
+- terraform (v0.11.8)
+- node (v8.12.0)
+- npm (v6.4.1)
 
-(By the way, my o.s. is a Debian GNU/Linux)
+(By the way, my OS is a Debian GNU/Linux)
 
 ## Usage
 
@@ -24,23 +26,25 @@ cd terraform/dev/main
 Only for the first time:
 
 ```
-terraform init
+make init
 ```
 
-Then:
+that will execute `terraform init`. Then:
 
 ```
 export AWS_ACCESS_KEY_ID="anaccesskey"
 export AWS_SECRET_ACCESS_KEY="asecretkey"
 export AWS_DEFAULT_REGION="us-west-2"
-terraform plan
+make plan
 ```
 
-and finally
+that will execute `terraform plan`. Finally:
 
 ```
-terraform apply
+make apply
 ```
+
+that will execute `terraform init && npm install && npm test && terraform apply`
 
 ## Tests
 
